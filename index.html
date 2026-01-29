@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title>BALCI AI</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #0f172a;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .box {
+      width: 90%;
+      max-width: 400px;
+      background: #1e293b;
+      padding: 20px;
+      border-radius: 12px;
+      text-align: center;
+    }
+    input {
+      width: 100%;
+      padding: 10px;
+      border-radius: 8px;
+      border: none;
+      margin-top: 10px;
+    }
+    button {
+      margin-top: 10px;
+      padding: 10px;
+      width: 100%;
+      border: none;
+      border-radius: 8px;
+      background: #38bdf8;
+      font-size: 16px;
+    }
+    #cevap {
+      margin-top: 15px;
+      background: #020617;
+      padding: 10px;
+      border-radius: 8px;
+      min-height: 40px;
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="box">
+  <h2>🤖 BALCI AI</h2>
+  <p>Bana bir şey sor</p>
+
+  <input type="text" id="soru" placeholder="Sorunu yaz...">
+  <button onclick="cevapla()">Sor</button>
+
+  <div id="cevap"></div>
+</div>
+
+<script>
+function cevapla() {
+  let soru = document.getElementById("soru").value.toLowerCase();
+  let cevap = "Bu konuda biraz düşünmem lazım 🤔";
+
+  if (soru.includes("merhaba") || soru.includes("selam"))
+    cevap = "Merhaba! Ben BALCI AI 👋";
+
+  else if (soru.includes("adın"))
+    cevap = "Adım BALCI AI 🤖";
+
+  else if (soru.includes("nasılsın"))
+    cevap = "İyiyim 😄 Sen nasılsın?";
+
+  else if (soru.includes("saat"))
+    cevap = "Saat şu an: " + new Date().toLocaleTimeString();
+
+  else if (soru.length < 3)
+    cevap = "Biraz daha uzun yazar mısın?";
+  document.getElementById("cevap").innerText = cevap;
+}
+</script>
+
+</body>
+</html>
