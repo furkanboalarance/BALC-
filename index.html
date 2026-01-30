@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>BALCI AI</title>
+  <link rel="icon" type="image/png" href="favicon.png">
 
   <style>
     body {
@@ -79,7 +80,8 @@ function cevapla() {
     cevap = "Saat şu an: " + new Date().toLocaleTimeString();
 
   else if (soru.length < 3)
-    cevap = "Biraz daha uzun yazar mısın?";
+    cevap = "Biraz daha uzun yazar mısın?"
+
   document.getElementById("cevap").innerText = cevap;
 }
 </script>
